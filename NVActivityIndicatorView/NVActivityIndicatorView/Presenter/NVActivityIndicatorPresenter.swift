@@ -41,9 +41,6 @@ public final class ActivityData {
     /// Message spacing to activity indicator view.
     let messageSpacing: CGFloat
 
-    /// Animation type.
-    let type: NVActivityIndicatorType
-
     /// Color of activity indicator view.
     let color: UIColor
 
@@ -84,7 +81,6 @@ public final class ActivityData {
                 message: String? = nil,
                 messageFont: UIFont? = nil,
                 messageSpacing: CGFloat? = nil,
-                type: NVActivityIndicatorType? = nil,
                 color: UIColor? = nil,
                 padding: CGFloat? = nil,
                 displayTimeThreshold: Int? = nil,
@@ -95,7 +91,6 @@ public final class ActivityData {
         self.message = message ?? NVActivityIndicatorView.DEFAULT_BLOCKER_MESSAGE
         self.messageFont = messageFont ?? NVActivityIndicatorView.DEFAULT_BLOCKER_MESSAGE_FONT
         self.messageSpacing = messageSpacing ?? NVActivityIndicatorView.DEFAULT_BLOCKER_MESSAGE_SPACING
-        self.type = type ?? NVActivityIndicatorView.DEFAULT_TYPE
         self.color = color ?? NVActivityIndicatorView.DEFAULT_COLOR
         self.padding = padding ?? NVActivityIndicatorView.DEFAULT_PADDING
         self.displayTimeThreshold = displayTimeThreshold ?? NVActivityIndicatorView.DEFAULT_BLOCKER_DISPLAY_TIME_THRESHOLD
@@ -190,7 +185,6 @@ public final class NVActivityIndicatorPresenter {
 
         let activityIndicatorView = NVActivityIndicatorView(
             frame: CGRect(x: 0, y: 0, width: activityData.size.width, height: activityData.size.height),
-            type: activityData.type,
             color: activityData.color,
             padding: activityData.padding)
 

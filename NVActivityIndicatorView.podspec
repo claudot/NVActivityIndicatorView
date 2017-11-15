@@ -13,6 +13,8 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/ninjaprox/NVActivityIndicatorView.git", :tag => s.version }
 
+  s.dependency 'lottie-ios', '2.1.3'
+
   s.subspec "Presenter" do |ps|
     ps.source_files = "NVActivityIndicatorView/NVActivityIndicatorView/**/*.swift"
   end
