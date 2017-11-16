@@ -164,6 +164,13 @@ public final class NVActivityIndicatorView: UIView {
         guard let l = self.lottieView else {
             return
         }
-        l.frame = CGRect(x: 0.0, y: 0.0, width: minEdge, height: l.frame.size.height * (minEdge / l.frame.size.width))
+        if (l.frame.size.width > l.frame.size.height) {
+            let h = l.frame.size.height * (minEdge / l.frame.size.width)
+            l.frame = CGRect(x: 0.0, y: (minEdge - h) / 2.0, width: minEdge, height: h)
+        }
+        else {
+            let w = l.frame.size.width * (minEdge / l.frame.size.height)
+            l.frame = CGRect(x: (minEdge - w) / 2.0, y: 0.0, width: w, height: minEdge)
+        }
     }
 }
